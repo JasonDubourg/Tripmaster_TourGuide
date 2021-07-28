@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.4.7'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'com.palantir.docker' version '0.27.0'
 }
 
 group = 'com.tripmaster'
@@ -15,6 +16,13 @@ repositories {
 		dirs 'libs'
 	}
 }
+
+//docker {
+//	name "tourguide"
+//	dockerfile file('src/docker/Dockerfile')
+//	copySpec().from(jar).rename(".*","tourguide.jar")
+//	buildArgs(['JAR_FILE': "tourguide.jar"])
+//}
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
