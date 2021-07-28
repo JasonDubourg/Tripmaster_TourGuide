@@ -2,11 +2,9 @@ package com.tripmaster.tourguide.controller;
 
 import com.tripmaster.tourguide.service.FeignLocationService;
 import com.tripmaster.tourguide.service.FeignRewardsService;
+import com.tripmaster.tourguide.user.UserPreferences;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -17,18 +15,6 @@ public class TourGuideController {
 
     @Autowired
     private FeignRewardsService feignRewardsService;
-
-    // ##### Call the location #####
-    @RequestMapping("/location")
-    public String getLocationService() {
-        return feignLocationService.helloLocation();
-    }
-
-    // ##### Call the rewards  #####
-    @GetMapping("/rewards")
-    public String getRewardsService() {
-        return feignRewardsService.helloRewards();
-    }
 
     @GetMapping("/getRewards")
     public String getUserRewards(@RequestParam("userName") String userName) {
@@ -53,6 +39,11 @@ public class TourGuideController {
     @GetMapping("/getNearbyAttractions")
     public String getNearbyAttractions(@RequestParam("userName") String userName) {
         return feignLocationService.getNearbyAttractions(userName);
+    }
+
+    @PutMapping("/setUserPreferences")
+    public String setUserPreferences(@RequestParam String userName, @RequestBody UserPreferences userPreferences) {
+        return feignLocationService.setUserPreferences(userName, userPreferences);
     }
 
 }
