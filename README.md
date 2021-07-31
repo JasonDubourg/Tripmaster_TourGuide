@@ -8,9 +8,9 @@ Application de localisation et de génération de bons plans pour les voyageurs.
 
 2. Faire de même pour les deux microservices suivants :
 	
-- Tripmaster_Rewards (-> [lien](https://github.com/JasonDubourg/Tripmaster_Rewards) 
+- Tripmaster_Rewards (-> [lien](https://github.com/JasonDubourg/Tripmaster_Rewards))
  
-- Tripmaster_Location (-> [lien](https://github.com/JasonDubourg/Tripmaster_Location/tree/master)
+- Tripmaster_Location (-> [lien](https://github.com/JasonDubourg/Tripmaster_Location/tree/master))
 
 2. Importer ces projets dans trois fenêtres d'IDE différentes.
 
